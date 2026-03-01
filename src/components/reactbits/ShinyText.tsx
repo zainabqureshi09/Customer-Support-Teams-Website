@@ -19,7 +19,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   return (
     <div
       className={cn(
-        "text-[#b5b5b5a4] bg-clip-text inline-block",
+        "text-muted-foreground/80 bg-clip-text inline-block transition-colors duration-300",
         !disabled && "animate-shiny-text",
         className
       )}

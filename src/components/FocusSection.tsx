@@ -2,7 +2,7 @@ import TrueFocus from "./reactbits/TrueFocus";
 
 const FocusSection = () => {
   return (
-    <section className="py-20 bg-background overflow-hidden">
+    <section className="py-12 lg:py-20 bg-background overflow-hidden border-y border-border">
       <div className="section-container">
         <TrueFocus 
           sentence="KPI DRIVEN PERFORMANCE ACCOUNTABILITY"

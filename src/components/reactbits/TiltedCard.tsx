@@ -80,7 +80,7 @@ const TiltedCard = ({
         <img
           src={imageSrc}
           alt={altText}
-          className="absolute inset-0 w-full h-full object-cover rounded-[15px] shadow-2xl"
+          className="absolute inset-0 w-full h-full object-cover rounded-[15px] shadow-2xl border border-border/50"
         />
 
         {displayOverlayContent && overlayContent && (
@@ -91,7 +91,7 @@ const TiltedCard = ({
 
         {showTooltip && captionText && (
           <motion.div
-            className="absolute bottom-4 left-4 right-4 z-20 bg-black/60 backdrop-blur-sm text-white p-2 rounded-lg text-sm text-center opacity-0 [transform:translateZ(50px)]"
+            className="absolute bottom-4 left-4 right-4 z-20 bg-background/80 backdrop-blur-md text-foreground p-2 rounded-lg text-xs lg:text-sm text-center opacity-0 [transform:translateZ(50px)] font-bold border border-border/50"
             whileHover={{ opacity: 1 }}
           >
             {captionText}

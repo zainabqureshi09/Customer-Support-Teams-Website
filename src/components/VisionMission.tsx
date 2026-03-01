@@ -16,47 +16,47 @@ const VisionMission = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 bg-secondary/10">
+    <section ref={sectionRef} className="relative py-16 lg:py-32 bg-secondary/10">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-px bg-border/40 overflow-hidden rounded-3xl border border-border/40 shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-border/40 overflow-hidden rounded-2xl lg:rounded-3xl border border-border/40 shadow-2xl">
           {/* Vision */}
           <div
-            className="p-12 lg:p-16 bg-card flex flex-col justify-center"
+            className="p-8 sm:p-12 lg:p-16 bg-card flex flex-col justify-center"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(24px)",
               transition: "opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s",
             }}
           >
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-6">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-4 lg:mb-6">
               Our Vision
             </span>
-            <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground leading-tight mb-6">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-foreground leading-tight mb-4 lg:mb-6">
               To become a leading global customer service staffing partner in Malaysia.
             </h3>
-            <p className="text-muted-foreground leading-relaxed italic">
+            <p className="text-sm lg:text-base text-muted-foreground leading-relaxed italic">
               Recognized for reliability, performance excellence, and the cultivation of long-term client relationships that drive mutual growth.
             </p>
           </div>
 
           {/* Mission */}
           <div
-            className="p-12 lg:p-16 bg-card flex flex-col justify-center"
+            className="p-8 sm:p-12 lg:p-16 bg-card flex flex-col justify-center"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(24px)",
               transition: "opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s",
             }}
           >
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-6">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-4 lg:mb-6">
               Our Mission
             </span>
-            <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground leading-tight mb-6">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-foreground leading-tight mb-4 lg:mb-6">
               Empowering international companies by delivering skilled, performance-driven professionals.
             </h3>
-            <p className="text-muted-foreground leading-relaxed italic">
+            <p className="text-sm lg:text-base text-muted-foreground leading-relaxed italic">
               Enhancing customer satisfaction, operational efficiency, and sustainable business growth through our multilingual talent solutions.
             </p>
           </div>

@@ -12,39 +12,39 @@ import SpotlightCard from "./reactbits/SpotlightCard";
 const services = [
   {
     icon: Users,
-    title: "Building Dedicated Customer Support Teams",
+    title: "Dedicated Teams",
     description:
-      "End-to-end team assembly — from talent identification to deployment — purpose-built for your brand's CX requirements.",
+      "End-to-end team assembly — from talent identification to deployment — built for your brand's requirements.",
   },
   {
     icon: Languages,
-    title: "Recruiting Multilingual Agents",
+    title: "Multilingual Agents",
     description:
-      "Access a deep talent pool of multilingual professionals fluent in Asian and international languages, culturally aligned to your markets.",
+      "Access a deep talent pool fluent in Asian and international languages, culturally aligned to your markets.",
   },
   {
     icon: Settings,
-    title: "Workforce Deployment & Management",
+    title: "Deployment & Mgmt",
     description:
-      "Structured onboarding, scheduling, and operational management ensuring seamless integration with your existing workflows.",
+      "Structured onboarding and operational management ensuring seamless integration with your workflows.",
   },
   {
     icon: BarChart3,
-    title: "Performance Monitoring & KPI Tracking",
+    title: "KPI Monitoring",
     description:
-      "Real-time dashboards and rigorous performance frameworks — CSAT, FCR, AHT — delivering measurable accountability.",
+      "Real-time dashboards and rigorous performance frameworks — CSAT, FCR, AHT — delivering accountability.",
   },
   {
     icon: ShieldCheck,
-    title: "Service-Level Compliance Management",
+    title: "Compliance Mgmt",
     description:
-      "Proactive SLA adherence with continuous quality audits, compliance protocols, and data protection standards.",
+      "Proactive SLA adherence with continuous quality audits and data protection standards.",
   },
   {
     icon: TrendingUp,
-    title: "Operational Scalability Planning",
+    title: "Scalability Planning",
     description:
-      "Flexible workforce models designed to scale with seasonal demand, market expansion, or rapid growth initiatives.",
+      "Flexible workforce models designed to scale with seasonal demand or rapid growth initiatives.",
   },
 ];
 
@@ -64,13 +64,13 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="solutions" className="relative py-24 lg:py-32">
+    <section ref={sectionRef} id="solutions" className="relative py-16 lg:py-32 overflow-hidden bg-background">
       {/* Subtle top divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="section-container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">
             What We Do
           </span>
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground leading-tight">
@@ -79,17 +79,17 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <SpotlightCard
               key={service.title}
-              className="glass-card p-8 group cursor-default transition-all duration-500 hover:-translate-y-1"
+              className="glass-card p-6 lg:p-8 group cursor-default"
               spotlightColor="rgba(14, 165, 233, 0.15)"
             >
               <div className="h-11 w-11 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-300">
                 <service.icon className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="font-display font-semibold text-foreground text-lg mb-3 leading-snug">
+              <h3 className="font-display font-bold text-foreground text-lg mb-3 leading-snug">
                 {service.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

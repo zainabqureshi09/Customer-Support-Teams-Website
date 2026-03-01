@@ -6,82 +6,82 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 216 45% 7%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 216 45% 7%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 45% 7%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 174 62% 47%;
-    --primary-foreground: 210 20% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 20% 90%;
-    --secondary-foreground: 216 45% 7%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
 
-    --muted: 210 20% 90%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 174 62% 47%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 174 62% 47%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 199 89% 48%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Custom tokens */
-    --navy-deep: 216 45% 5%;
-    --navy: 216 40% 7%;
-    --navy-light: 216 35% 12%;
-    --teal: 174 62% 47%;
-    --teal-glow: 174 62% 55%;
+    --navy-deep: 222 47% 4%;
+    --navy: 222 47% 7%;
+    --navy-light: 222 47% 12%;
+    --teal: 199 89% 48%;
+    --teal-glow: 199 89% 60%;
   }
 
   .dark {
-    --background: 216 40% 7%;
+    --background: 222 47% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 216 35% 10%;
+    --card: 222 47% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 216 35% 10%;
+    --popover: 222 47% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 174 62% 47%;
-    --primary-foreground: 216 40% 7%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 4%;
 
-    --secondary: 216 30% 14%;
+    --secondary: 222 47% 10%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 216 25% 18%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 174 62% 47%;
-    --accent-foreground: 216 40% 7%;
+    --accent: 222 47% 10%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 216 25% 18%;
-    --input: 216 25% 18%;
-    --ring: 174 62% 47%;
+    --border: 222 47% 12%;
+    --input: 222 47% 12%;
+    --ring: 199 89% 48%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-300;
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased transition-colors duration-300;
+    @apply bg-background text-foreground font-body antialiased transition-colors duration-500;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -95,26 +95,33 @@
 
 @layer components {
   .section-container {
-    @apply max-w-7xl mx-auto px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .text-gradient {
-    background: linear-gradient(to right, hsl(174, 62%, 47%), hsl(174, 62%, 55%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-primary animate-gradient bg-[length:200%_auto];
+  }
+
+  .split-parent {
+    display: inline-block !important;
+    width: 100%;
+  }
+  
+  .split-parent > span {
+    display: inline-block !important;
+    white-space: normal !important;
   }
 
   .glass-card {
-    @apply bg-card/60 backdrop-blur-2xl border border-border/50 shadow-sm transition-all duration-300;
+    @apply bg-card/60 backdrop-blur-xl border border-border shadow-sm transition-all duration-300;
   }
   
   .dark .glass-card {
-    @apply bg-navy-light/60 border-white/5;
+    @apply bg-navy-light/40 border-white/5;
   }
 
   .language-badge {
-    @apply inline-flex items-center px-3 py-1.5 text-xs font-medium tracking-wide rounded-full transition-colors duration-300;
+    @apply inline-flex items-center px-3 py-1.5 text-[10px] font-bold tracking-widest rounded-full transition-colors duration-300 uppercase;
     @apply border border-primary/20 bg-primary/5 text-primary;
   }
   

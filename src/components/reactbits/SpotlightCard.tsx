@@ -9,7 +9,7 @@ interface SpotlightCardProps {
 const SpotlightCard = ({
   children,
   className = "",
-  spotlightColor = "rgba(255, 255, 255, 0.25)",
+  spotlightColor = "rgba(255, 255, 255, 0.15)",
 }: SpotlightCardProps) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -51,7 +51,7 @@ const SpotlightCard = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-3xl border border-white/10 bg-black/40 p-8 ${className}`}
+      className={`relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur-md p-8 transition-colors duration-300 ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 transition duration-300"

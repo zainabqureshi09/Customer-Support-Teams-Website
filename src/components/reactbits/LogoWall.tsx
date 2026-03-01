@@ -65,22 +65,24 @@ const LogoWall = ({
       >
         <div className={marqueeClass} style={{ animation: `${direction === 'vertical' ? 'marquee-vertical' : 'marquee-horizontal'} var(--duration) linear infinite` }}>
           {items.map((item, idx) => (
-            <img
-              key={idx}
-              src={item.imgUrl}
-              alt={item.altText}
-              className="bg-[var(--color-bg-accent)] rounded-[0.5rem] object-contain aspect-video p-[calc(var(--size)/10)] w-[var(--size)]"
-            />
+            <div key={idx} className="flex items-center justify-center group/logo transition-all duration-500">
+                <img
+                src={item.imgUrl}
+                alt={item.altText}
+                className="h-8 lg:h-10 w-auto object-contain filter grayscale invert dark:invert-0 opacity-40 group-hover/logo:opacity-100 group-hover/logo:grayscale-0 transition-all duration-500"
+                />
+            </div>
           ))}
         </div>
         <div className={marqueeClass} aria-hidden="true" style={{ animation: `${direction === 'vertical' ? 'marquee-vertical' : 'marquee-horizontal'} var(--duration) linear infinite` }}>
           {items.map((item, idx) => (
-            <img
-              key={`dup-${idx}`}
-              src={item.imgUrl}
-              alt={item.altText}
-              className="bg-[var(--color-bg-accent)] rounded-[0.5rem] object-contain aspect-video p-[calc(var(--size)/10)] w-[var(--size)]"
-            />
+            <div key={`dup-${idx}`} className="flex items-center justify-center group/logo transition-all duration-500">
+                <img
+                src={item.imgUrl}
+                alt={item.altText}
+                className="h-8 lg:h-10 w-auto object-contain filter grayscale invert dark:invert-0 opacity-40 group-hover/logo:opacity-100 group-hover/logo:grayscale-0 transition-all duration-500"
+                />
+            </div>
           ))}
         </div>
       </div>

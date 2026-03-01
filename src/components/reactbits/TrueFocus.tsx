@@ -50,19 +50,19 @@ const TrueFocus = ({
   }, [pauseBetweenAnimations, words.length]);
 
   return (
-    <div className="relative flex flex-wrap justify-center items-center gap-[0.2em] font-bold text-[3rem] text-[#333]">
+    <div className="relative flex flex-wrap justify-center items-center gap-[0.2em] font-extrabold text-[2rem] sm:text-[3rem] lg:text-[4rem] text-center leading-tight">
       {words.map((word, index) => {
         const isActive = index === activeIndex;
         return (
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
-            className="relative cursor-pointer"
+            className="relative cursor-pointer transition-all duration-300 px-1"
             style={
               {
                 "--main-color": mainColor,
-                filter: isActive ? "none" : "blur(4px)",
-                transition: "filter 0.3s ease",
+                filter: isActive ? "none" : "blur(2px)",
+                opacity: isActive ? 1 : 0.3,
                 color: isActive ? mainColor : "#888",
               } as React.CSSProperties
             }
@@ -93,10 +93,10 @@ const TrueFocus = ({
           } as React.CSSProperties
         }
       >
-        <span className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2" style={{ borderColor }}></span>
-        <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2" style={{ borderColor }}></span>
-        <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2" style={{ borderColor }}></span>
-        <span className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2" style={{ borderColor }}></span>
+        <span className="absolute top-0 left-0 w-3 h-3 lg:w-4 lg:h-4 border-t-2 border-l-2" style={{ borderColor }}></span>
+        <span className="absolute top-0 right-0 w-3 h-3 lg:w-4 lg:h-4 border-t-2 border-r-2" style={{ borderColor }}></span>
+        <span className="absolute bottom-0 left-0 w-3 h-3 lg:w-4 lg:h-4 border-b-2 border-l-2" style={{ borderColor }}></span>
+        <span className="absolute bottom-0 right-0 w-3 h-3 lg:w-4 lg:h-4 border-b-2 border-r-2" style={{ borderColor }}></span>
       </motion.div>
     </div>
   );

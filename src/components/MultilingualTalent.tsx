@@ -35,11 +35,11 @@ const MultilingualTalent = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 bg-secondary/10">
+    <section ref={sectionRef} className="relative py-16 lg:py-32 bg-secondary/10 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           <div
             style={{
               opacity: isVisible ? 1 : 0,
@@ -47,19 +47,19 @@ const MultilingualTalent = () => {
               transition: "opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s",
             }}
           >
-            <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">
               Language Capability
             </span>
             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground leading-tight mb-6">
               Multilingual Talent for{" "}
               <span className="text-gradient">Global Markets</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8">
               Our multilingual workforce capability enables brands to engage customers 
               in their native language — building trust, reducing friction, and delivering 
               culturally aligned experiences across every market you serve.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 lg:gap-3">
               {outcomes.map((outcome, i) => (
                 <span
                   key={outcome}
@@ -75,14 +75,14 @@ const MultilingualTalent = () => {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center w-full">
             <TiltedCard 
               imageSrc="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1000&auto=format&fit=crop"
               altText="Multilingual Professional Team"
               captionText="Our Global Talent Force"
-              containerHeight="450px"
+              containerHeight="300px"
               containerWidth="100%"
-              imageHeight="450px"
+              imageHeight="300px"
               imageWidth="100%"
               rotateAmplitude={12}
               scaleOnHover={1.05}
@@ -90,8 +90,8 @@ const MultilingualTalent = () => {
           </div>
         </div>
 
-        {/* Language grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Language grid - Improved for mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {languages.map((lang, i) => (
             <div
               key={lang.name}
@@ -104,12 +104,12 @@ const MultilingualTalent = () => {
             >
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              <h4 className="font-display font-semibold text-foreground text-sm mb-1">
+              <h4 className="font-display font-bold text-foreground text-sm lg:text-base mb-1">
                 {lang.name}
               </h4>
               <p className="text-xs text-muted-foreground">{lang.region}</p>
 
-              <div className="mt-3 max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-500 ease-in-out">
+              <div className="mt-3 lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-20 transition-all duration-500 ease-in-out">
                 <p className="text-xs text-primary/80 leading-relaxed border-t border-border/40 pt-3">
                   Trained in cultural awareness, communication etiquette, and market-specific customer behavior.
                 </p>

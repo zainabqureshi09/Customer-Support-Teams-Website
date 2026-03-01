@@ -2,11 +2,11 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "luc
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border/40 transition-colors duration-300">
-      <div className="section-container pt-20 pb-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-background border-t border-border/40 transition-colors duration-300 overflow-hidden">
+      <div className="section-container pt-16 lg:pt-20 pb-8 lg:pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 lg:mb-16">
           {/* Brand */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20">
                 C
@@ -21,27 +21,20 @@ const Footer = () => {
               in Malaysia.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="#" className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a href="#" className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Instagram className="h-4 w-4" />
-              </a>
+              {[Linkedin, Twitter, Facebook, Instagram].map((Icon, i) => (
+                <a key={i} href="#" className="h-9 w-9 rounded-lg bg-secondary/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 border border-border/40">
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="font-display font-bold text-sm text-foreground uppercase tracking-[0.2em] mb-8">
+            <h4 className="font-display font-bold text-[10px] text-foreground uppercase tracking-[0.3em] mb-6 lg:mb-8">
               Company
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3 lg:space-y-4">
               <li><a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">About Connect</a></li>
               <li><a href="#process" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">Our Methodology</a></li>
               <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">Quality Standards</a></li>
@@ -52,10 +45,10 @@ const Footer = () => {
 
           {/* Solutions */}
           <div>
-            <h4 className="font-display font-bold text-sm text-foreground uppercase tracking-[0.2em] mb-8">
+            <h4 className="font-display font-bold text-[10px] text-foreground uppercase tracking-[0.3em] mb-6 lg:mb-8">
               Solutions
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3 lg:space-y-4">
               <li><a href="#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors">Staffing Solutions</a></li>
               <li><a href="#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors">Multilingual Teams</a></li>
               <li><a href="#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors">Performance Tracking</a></li>
@@ -66,10 +59,10 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-sm text-foreground uppercase tracking-[0.2em] mb-8">
+            <h4 className="font-display font-bold text-[10px] text-foreground uppercase tracking-[0.3em] mb-6 lg:mb-8">
               Contact
             </h4>
-            <ul className="space-y-5">
+            <ul className="space-y-4 lg:space-y-5">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                 <span className="text-sm text-muted-foreground leading-snug">Kuala Lumpur, Malaysia</span>
@@ -87,13 +80,13 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-          <p className="text-[11px] text-muted-foreground tracking-wide font-medium">
-            © {new Date().getFullYear()} Connect Global Workforce Solutions. All rights reserved.
+          <p className="text-[10px] text-muted-foreground tracking-widest font-bold uppercase">
+            © {new Date().getFullYear()} Connect Global. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <a href="#" className="text-[11px] text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest">Privacy Policy</a>
-            <a href="#" className="text-[11px] text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest">Terms of Service</a>
-            <a href="#" className="text-[11px] text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest">Sitemap</a>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <a href="#" className="text-[10px] text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest font-bold">Privacy</a>
+            <a href="#" className="text-[10px] text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest font-bold">Terms</a>
+            <a href="#" className="text-[10px] text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest font-bold">Sitemap</a>
           </div>
         </div>
       </div>
