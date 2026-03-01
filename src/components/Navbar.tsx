@@ -35,20 +35,22 @@ const Navbar = () => {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
-        scrolled || isMobileMenuOpen
+        isMobileMenuOpen
+          ? "bg-background border-border py-4"
+          : scrolled
           ? "bg-background/80 backdrop-blur-xl border-border py-3"
-          : "bg-transparent border-transparent py-5 lg:py-6"
+          : "bg-transparent border-transparent py-5 lg:py-6 max-md:bg-background/40 max-md:backdrop-blur-md max-md:border-border/10 max-md:py-4"
       )}
     >
       <div className="section-container flex items-center justify-between">
         {/* Professional Brand Identity */}
         <a href="/" className="flex items-center gap-3 group transition-transform hover:scale-[1.02] shrink-0">
-          <Logo className="h-10 w-10 lg:h-11 lg:w-11 transition-transform group-hover:rotate-6 duration-500" />
+          <Logo className="h-9 w-9 lg:h-11 lg:w-11 transition-transform group-hover:rotate-6 duration-500" />
           <div className="flex flex-col">
-            <span className="font-display font-black text-xl lg:text-2xl tracking-tighter leading-none text-foreground">
+            <span className="font-display font-black text-lg lg:text-2xl tracking-tighter leading-none text-foreground">
               CONNECT
             </span>
-            <span className="text-[8px] font-black tracking-[0.3em] text-primary uppercase mt-1 leading-none">
+            <span className="text-[7px] lg:text-[8px] font-black tracking-[0.3em] text-primary uppercase mt-1 leading-none">
               Global Solutions
             </span>
           </div>
@@ -111,7 +113,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "absolute top-full left-0 right-0 bg-background/98 backdrop-blur-2xl border-b border-border transition-all duration-500 ease-in-out overflow-hidden md:hidden shadow-2xl",
+          "absolute top-full left-0 right-0 bg-background backdrop-blur-2xl border-b border-border transition-all duration-500 ease-in-out overflow-hidden md:hidden shadow-2xl",
           isMobileMenuOpen ? "max-h-screen opacity-100 py-10" : "max-h-0 opacity-0 py-0"
         )}
       >
