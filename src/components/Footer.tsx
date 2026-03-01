@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -7,13 +8,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 lg:mb-16">
           {/* Brand */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20">
-                C
+            <div className="flex items-center gap-3 mb-6">
+              <Logo className="h-10 w-10" />
+              <div className="flex flex-col">
+                <span className="font-display font-black text-xl tracking-tighter leading-none text-foreground uppercase">
+                  Connect
+                </span>
+                <span className="text-[7px] font-black tracking-[0.3em] text-primary uppercase mt-1 leading-none">
+                  Global Solutions
+                </span>
               </div>
-              <span className="font-display font-bold text-xl tracking-tight text-foreground">
-                Connect
-              </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-8">
               Strategic global workforce solutions company building 

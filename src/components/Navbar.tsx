@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import GradientText from "./reactbits/GradientText";
 import StarBorder from "./reactbits/StarBorder";
+import Logo from "./Logo";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -40,20 +41,20 @@ const Navbar = () => {
       )}
     >
       <div className="section-container flex items-center justify-between">
-        {/* Brand/Logo - Ensure it doesn't shrink */}
-        <a href="/" className="flex items-center gap-2.5 group transition-transform hover:scale-[1.02] shrink-0">
-          <div className="h-9 w-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-            <span className="font-display font-black text-primary-foreground text-base">C</span>
+        {/* Professional Brand Identity */}
+        <a href="/" className="flex items-center gap-3 group transition-transform hover:scale-[1.02] shrink-0">
+          <Logo className="h-10 w-10 lg:h-11 lg:w-11 transition-transform group-hover:rotate-6 duration-500" />
+          <div className="flex flex-col">
+            <span className="font-display font-black text-xl lg:text-2xl tracking-tighter leading-none text-foreground">
+              CONNECT
+            </span>
+            <span className="text-[8px] font-black tracking-[0.3em] text-primary uppercase mt-1 leading-none">
+              Global Solutions
+            </span>
           </div>
-          <GradientText
-            colors={["#0EA5E9", "#40ffaa", "#0EA5E9"]}
-            className="font-display font-bold text-xl lg:text-2xl tracking-tighter"
-          >
-            Connect
-          </GradientText>
         </a>
 
-        {/* Desktop Links - More responsive spacing */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center lg:gap-8 md:gap-4">
           <div className="flex items-center lg:gap-6 md:gap-4">
             {navLinks.map((link) => (
