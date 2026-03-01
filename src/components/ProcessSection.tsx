@@ -45,10 +45,18 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="process" className="relative py-24 lg:py-32 bg-secondary/20">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section ref={sectionRef} id="process" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop" 
+            alt="Team meeting" 
+            className="w-full h-full object-cover opacity-5"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      </div>
 
-      <div className="section-container">
+      <div className="section-container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">
             Our Methodology
@@ -60,8 +68,8 @@ const ProcessSection = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline Line (Vertical on mobile, Horizontal on desktop) */}
-          <div className="absolute left-8 lg:left-0 lg:top-1/2 lg:w-full h-full lg:h-px bg-border/50 -translate-y-1/2 hidden lg:block" />
+          {/* Timeline Line (Desktop only) */}
+          <div className="absolute left-0 top-1/2 w-full h-px bg-primary/20 -translate-y-1/2 hidden lg:block" />
           
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-6 relative">
             {steps.map((step, i) => (
@@ -76,12 +84,12 @@ const ProcessSection = () => {
               >
                 {/* Step Circle/Icon */}
                 <div className="relative z-10 mb-6 lg:mb-8">
-                  <div className="h-16 w-16 rounded-full bg-card border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors duration-500 shadow-xl">
-                    <step.icon className="h-7 w-7 text-primary" />
+                  <div className="h-20 w-20 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 flex items-center justify-center group-hover:border-primary/50 transition-all duration-500 shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-1">
+                    <step.icon className="h-8 w-8 text-primary" />
                   </div>
                   {/* Step Number Badge */}
-                  <div className="absolute -top-1 -right-1 h-6 w-6 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold text-primary-foreground">
-                    0{i + 1}
+                  <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground shadow-lg">
+                    {i + 1}
                   </div>
                 </div>
 

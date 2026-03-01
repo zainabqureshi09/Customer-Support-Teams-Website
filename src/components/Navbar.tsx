@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
+import GradientText from "./reactbits/GradientText";
+import StarBorder from "./reactbits/StarBorder";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -32,9 +34,12 @@ const Navbar = () => {
           <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
             <span className="font-display font-bold text-primary-foreground text-sm">C</span>
           </div>
-          <span className="font-display font-bold text-lg tracking-tight text-foreground">
+          <GradientText
+            colors={["#0EA5E9", "#40ffaa", "#0EA5E9"]}
+            className="font-display font-bold text-lg tracking-tight"
+          >
             Connect
-          </span>
+          </GradientText>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -75,9 +80,14 @@ const Navbar = () => {
                 <Moon className="h-4 w-4 transition-all" />
               )}
             </button>
-            <Button variant="hero" size="sm">
-              Request Consultation
-            </Button>
+            <StarBorder
+              as="button"
+              className="px-6 py-2 text-sm font-semibold rounded-full"
+              color="#0EA5E9"
+              speed="4s"
+            >
+              Consult Now
+            </StarBorder>
           </div>
         </div>
       </div>

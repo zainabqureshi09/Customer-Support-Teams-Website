@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, TrendingUp, Cpu, LayoutDashboard } from "lucide-react";
+import TiltedCard from "./reactbits/TiltedCard";
 
 const commitments = [
   {
@@ -40,7 +41,7 @@ const QualityPerformance = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-background">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
@@ -64,7 +65,7 @@ const QualityPerformance = () => {
               service excellence for your global brand.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-6 mb-8">
               {commitments.map((item) => (
                 <div key={item.title} className="flex gap-4">
                   <div className="mt-1 shrink-0">
@@ -83,7 +84,7 @@ const QualityPerformance = () => {
             </div>
           </div>
 
-          {/* Visual Element: Mockup Dashboard */}
+          {/* Visual Element: Mockup Dashboard + Image */}
           <div
             className="relative"
             style={{
@@ -92,7 +93,20 @@ const QualityPerformance = () => {
               transition: "opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s",
             }}
           >
-            <div className="glass-card p-6 lg:p-8 relative overflow-hidden shadow-2xl border-primary/20 bg-card/80">
+             <div className="relative z-10 mb-[-120px] ml-10 hidden lg:block">
+                <TiltedCard 
+                    imageSrc="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                    altText="Analytics and Performance Tracking"
+                    containerHeight="350px"
+                    containerWidth="450px"
+                    imageHeight="350px"
+                    imageWidth="450px"
+                    rotateAmplitude={5}
+                    scaleOnHover={1.02}
+                />
+            </div>
+
+            <div className="glass-card p-6 lg:p-8 relative overflow-hidden shadow-2xl border-primary/20 bg-card/80 backdrop-blur-xl z-20">
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
                   <div className="h-3 w-3 rounded-full bg-red-500/50" />
@@ -146,12 +160,10 @@ const QualityPerformance = () => {
                 </div>
               </div>
 
-              {/* Decorative Glow */}
               <div className="absolute -bottom-20 -right-20 h-40 w-40 bg-primary/10 blur-[60px] rounded-full" />
             </div>
 
-            {/* Float Element */}
-            <div className="absolute -top-4 -right-4 h-20 w-20 glass-card flex items-center justify-center animate-float shadow-xl border-primary/30">
+            <div className="absolute -top-4 -right-4 h-20 w-20 glass-card flex items-center justify-center animate-float shadow-xl border-primary/30 z-30">
               <CheckCircle2 className="h-8 w-8 text-primary" />
             </div>
           </div>

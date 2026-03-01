@@ -1,4 +1,6 @@
 import { Shield, TrendingUp, Users, Globe } from "lucide-react";
+import SplitText from "./reactbits/SplitText";
+import TiltedCard from "./reactbits/TiltedCard";
 
 const pillars = [
   {
@@ -27,21 +29,40 @@ const CompanyIntro = () => {
   return (
     <section id="about" className="relative py-24 lg:py-32">
       <div className="section-container">
-        {/* Section header */}
-        <div className="max-w-2xl mb-16">
-          <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">
-            About Connect
-          </span>
-          <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground leading-tight mb-6">
-            Your Strategic Partner for{" "}
-            <span className="text-gradient">Customer Experience</span>{" "}
-            Excellence
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Connect is a Malaysia-based global workforce solutions company that builds 
-            performance-driven, KPI-based customer support teams for brands that refuse 
-            to compromise on quality.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          {/* Section header */}
+          <div className="max-w-2xl">
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+              About Connect
+            </span>
+            <div className="mb-6">
+              <SplitText 
+                text="Your Strategic Partner for Customer Experience Excellence"
+                className="text-3xl lg:text-4xl font-display font-bold text-foreground leading-tight"
+                textAlign="left"
+                delay={50}
+              />
+            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Connect is a Malaysia-based global workforce solutions company that builds 
+              performance-driven, KPI-based customer support teams for brands that refuse 
+              to compromise on quality.
+            </p>
+          </div>
+
+          <div className="flex justify-center lg:justify-end">
+            <TiltedCard 
+              imageSrc="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1000&auto=format&fit=crop"
+              altText="Modern Corporate Office"
+              captionText="Our Strategic Operations Hub"
+              containerHeight="450px"
+              containerWidth="100%"
+              imageHeight="450px"
+              imageWidth="100%"
+              rotateAmplitude={12}
+              scaleOnHover={1.05}
+            />
+          </div>
         </div>
 
         {/* Pillars grid */}

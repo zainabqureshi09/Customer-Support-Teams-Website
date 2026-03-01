@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Globe, DollarSign, MessageSquare, Target, UserCheck, BarChart3, Lock } from "lucide-react";
+import TiltedCard from "./reactbits/TiltedCard";
+import SpotlightCard from "./reactbits/SpotlightCard";
 
 const malaysiaAdvantages = [
   { icon: MessageSquare, text: "Multilingual & multicultural hub" },
@@ -90,65 +92,70 @@ const StrategicAdvantage = () => {
           </h2>
         </div>
 
-        {/* Two-column advantages */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-20">
-          {/* Malaysia column */}
-          <div
-            className="glass-card p-8 lg:p-10"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? "translateX(0)" : "translateX(-32px)",
-              transition: "opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s",
-            }}
-          >
-            <h3 className="font-display font-bold text-xl text-foreground mb-6 flex items-center gap-3">
-              <span className="h-8 w-8 rounded-md bg-primary/15 flex items-center justify-center">
-                <MapPin className="h-4 w-4 text-primary" />
-              </span>
-              Malaysia Advantage
-            </h3>
-            <ul className="space-y-5">
-              {malaysiaAdvantages.map((item) => (
-                <li key={item.text} className="flex items-start gap-4">
-                  <div className="mt-0.5 h-9 w-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
-                    <item.icon className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="text-foreground/80 text-[15px] leading-relaxed">
-                    {item.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="flex justify-center">
+                <TiltedCard 
+                    imageSrc="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+                    altText="Global Network and Data"
+                    captionText="Strategic Global Infrastructure"
+                    containerHeight="500px"
+                    containerWidth="100%"
+                    imageHeight="500px"
+                    imageWidth="100%"
+                    rotateAmplitude={15}
+                    scaleOnHover={1.1}
+                />
+            </div>
+            
+            <div className="grid gap-6">
+                <SpotlightCard 
+                  className="glass-card p-8"
+                  spotlightColor="rgba(14, 165, 233, 0.1)"
+                >
+                    <h3 className="font-display font-bold text-xl text-foreground mb-6 flex items-center gap-3">
+                        <span className="h-8 w-8 rounded-md bg-primary/15 flex items-center justify-center">
+                            <MapPin className="h-4 w-4 text-primary" />
+                        </span>
+                        Malaysia Advantage
+                    </h3>
+                    <ul className="grid sm:grid-cols-2 gap-4">
+                        {malaysiaAdvantages.map((item) => (
+                            <li key={item.text} className="flex items-start gap-3">
+                                <div className="mt-1 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <item.icon className="h-3 w-3 text-primary" />
+                                </div>
+                                <span className="text-foreground/80 text-sm leading-tight">
+                                    {item.text}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </SpotlightCard>
 
-          {/* Connect column */}
-          <div
-            className="glass-card p-8 lg:p-10"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? "translateX(0)" : "translateX(32px)",
-              transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
-            }}
-          >
-            <h3 className="font-display font-bold text-xl text-foreground mb-6 flex items-center gap-3">
-              <span className="h-8 w-8 rounded-md bg-primary/15 flex items-center justify-center">
-                <Target className="h-4 w-4 text-primary" />
-              </span>
-              Connect Advantage
-            </h3>
-            <ul className="space-y-5">
-              {connectAdvantages.map((item) => (
-                <li key={item.text} className="flex items-start gap-4">
-                  <div className="mt-0.5 h-9 w-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
-                    <item.icon className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="text-foreground/80 text-[15px] leading-relaxed">
-                    {item.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                <SpotlightCard 
+                  className="glass-card p-8"
+                  spotlightColor="rgba(14, 165, 233, 0.1)"
+                >
+                    <h3 className="font-display font-bold text-xl text-foreground mb-6 flex items-center gap-3">
+                        <span className="h-8 w-8 rounded-md bg-primary/15 flex items-center justify-center">
+                            <Target className="h-4 w-4 text-primary" />
+                        </span>
+                        Connect Advantage
+                    </h3>
+                    <ul className="grid sm:grid-cols-2 gap-4">
+                        {connectAdvantages.map((item) => (
+                            <li key={item.text} className="flex items-start gap-3">
+                                <div className="mt-1 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <item.icon className="h-3 w-3 text-primary" />
+                                </div>
+                                <span className="text-foreground/80 text-sm leading-tight">
+                                    {item.text}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </SpotlightCard>
+            </div>
         </div>
 
         {/* Counters */}

@@ -131,11 +131,42 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+  			'shiny-text': {
+  				'0%': { 'background-position': '100% 0' },
+  				'100%': { 'background-position': '-100% 0' },
+  			},
+  			'star-movement-bottom': {
+  				'0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+  				'100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+  			},
+  			'star-movement-top': {
+  				'0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+  				'100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+  			},
+  			'marquee-horizontal': {
+  				from: { transform: 'translateX(0)' },
+  				to: { transform: 'translateX(calc(-100% - var(--size)/2))' },
+  			},
+  			'marquee-vertical': {
+  				from: { transform: 'translateY(0)' },
+  				to: { transform: 'translateY(calc(-100% - var(--size)/2))' },
+  			},
+  			'gradient': {
+  				'0%': { backgroundPosition: '0% 50%' },
+  				'50%': { backgroundPosition: '100% 50%' },
+  				'100%': { backgroundPosition: '0% 50%' },
+  			},
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'shiny-text': 'shiny-text 5s linear infinite',
+  			'star-movement-bottom': 'star-movement-bottom linear infinite',
+  			'star-movement-top': 'star-movement-top linear infinite',
+  			'marquee-horizontal': 'marquee-horizontal var(--duration) linear infinite',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			'gradient': 'gradient 8s linear infinite',
   		}
   	}
   },

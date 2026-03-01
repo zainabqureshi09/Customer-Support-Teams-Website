@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
+import SpotlightCard from "./reactbits/SpotlightCard";
 
 const services = [
   {
@@ -80,16 +81,10 @@ const ServicesSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <div
+            <SpotlightCard
               key={service.title}
               className="glass-card p-8 group cursor-default transition-all duration-500 hover:-translate-y-1"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible
-                  ? "translateY(0)"
-                  : "translateY(24px)",
-                transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
-              }}
+              spotlightColor="rgba(14, 165, 233, 0.15)"
             >
               <div className="h-11 w-11 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-300">
                 <service.icon className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />
@@ -100,7 +95,7 @@ const ServicesSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
